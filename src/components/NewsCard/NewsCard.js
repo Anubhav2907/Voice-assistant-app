@@ -15,8 +15,8 @@ const NewsCard = ({
 }) => {
   const classes = useStyles();
   return (
-    <Card>
-      <CardActionArea>
+    <Card className={classes.card}>
+      <CardActionArea href={url} target="_blank">
         <CardMedia
           className={classes.media}
           image={
@@ -24,7 +24,7 @@ const NewsCard = ({
             "https://media4.s-nbcnews.com/i/newscms/2019_01/2705191/nbc-social-default_b6fa4fef0d31ca7e8bc7ff6d117ca9f4.png"
           }
         ></CardMedia>
-        <div>
+        <div className={classes.details}>
           <Typography variant="body2" color="textSecondary" component="h2">
             {new Date(publishedAt).toDateString()}
           </Typography>
@@ -33,7 +33,7 @@ const NewsCard = ({
             {source.name}
           </Typography>
         </div>
-        <Typography gutterBottom variant="h5">
+        <Typography className={classes.title} gutterBottom variant="h5">
           {title}
         </Typography>
         <CardContent>
@@ -42,7 +42,7 @@ const NewsCard = ({
           </Typography>
         </CardContent>
       </CardActionArea>
-      <CardActions>
+      <CardActions className={classes.cardActions}>
         <Button size="small" color="primary">
           Learn More
         </Button>
